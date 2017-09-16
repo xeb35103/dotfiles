@@ -1,0 +1,18 @@
+unsetkey("^H");
+%setkey("bol", "^H");
+define backspaces ()
+{
+   variable n;
+   n = TAB_DEFAULT;
+   loop (n) {
+      n--;
+      if (what_column() - 1 > 0) call("backward_delete_char_untabify");
+   }
+}
+setkey ("backspaces()", "^H"); 
+%setkey("backward_delete_char","^H");
+
+
+
+
+

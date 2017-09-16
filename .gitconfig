@@ -1,0 +1,11 @@
+[diff]
+	tool = meld
+[difftool "meld"]
+	cmd = meld $LOCAL $REMOTE 	
+[merge]
+	tool = meld
+[mergetool "meld"]
+	cmd = meld $LOCAL $BASE $REMOTE --auto-merge
+
+[user]
+	email = xeb35103@users.noreply.github.com
