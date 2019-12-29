@@ -2,6 +2,8 @@
 DOT_FILES=(.bashrc .bash_aliases)
 DOT_FILES=(${DOT_FILES[@]} .bashrc.ros.groovy .bashrc.ros.hydro .bashrc.ros.indigo)
 DOT_FILES=(${DOT_FILES[@]} .emacs .fd2rc .mg)
+DOT_FILES=(${DOT_FILES[@]} .spacemacs)
+DOT_FILES=(${DOT_FILES[@]} .gitconfig .gitignore)
 
 for file in ${DOT_FILES[@]}
 do

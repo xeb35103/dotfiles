@@ -37,7 +37,7 @@ fi
 
 # set a fancy prompt (non-color, unless we know we "want" color)
 case "$TERM" in
-    xterm-color) color_prompt=yes;;
+    xterm-color|*-256color) color_prompt=yes;;
 esac
 
 # uncomment for a colored prompt, if the terminal has the capability; turned
@@ -84,6 +84,9 @@ if [ -x /usr/bin/dircolors ]; then
     alias egrep='egrep --color=auto'
 fi
 
+# colored GCC warnings and errors
+#export GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quote=01'
+
 # some more ls aliases
 alias ll='ls -alF'
 alias la='ls -A'
@@ -113,22 +116,28 @@ if ! shopt -oq posix; then
   fi
 fi
 
+# X Window
+#export DISPLAY=localhost:0.0
+export DISPLAY=$(grep -m 1 nameserver /etc/resolv.conf | awk '{print $2}'):0.0
+
 # ROS
 #source ~/.bashrc.ros.fuerte
 #source ~/.bashrc.ros.groovy
-source ~/.bashrc.ros.hydro
+#source ~/.bashrc.ros.hydro
 #source ~/.bashrc.ros.indigo
 
 # etc
-export PATH=/opt/arduino:$PATH
-export PATH=/opt/processing:$PATH
+#export PATH=/opt/arduino:$PATH
+#export PATH=/opt/processing:$PATH
 export PATH=.:~/bin:~/work/bin:$PATH
 
 # android
-export ANDROID_HOME=/opt/android-studio/sdk
-export PATH=$PATH:/opt/android-studio/sdk/tools
-export PATH=$PATH:/opt/android-studio/sdk/platform-tools
-export PATH=$PATH:/opt/android-studio/bin
+#export ANDROID_HOME=/opt/android-studio/sdk
+#export PATH=$PATH:/opt/android-studio/sdk/tools
+#export PATH=$PATH:/opt/android-studio/sdk/platform-tools
+#export PATH=$PATH:/opt/android-studio/bin
 
-PERL_MB_OPT="--install_base \"/home/leus/perl5\""; export PERL_MB_OPT;
-PERL_MM_OPT="INSTALL_BASE=/home/leus/perl5"; export PERL_MM_OPT;
+#PERL_MB_OPT="--install_base \"/home/leus/perl5\""; export PERL_MB_OPT;
+#PERL_MM_OPT="INSTALL_BASE=/home/leus/perl5"; export PERL_MM_OPT;
+
+
