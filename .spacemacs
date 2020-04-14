@@ -303,6 +303,7 @@ explicitly specified that a variable should be set before a package is loaded,
 you should place your code here."
   (global-set-key "\C-h" 'delete-backward-char)
   (auto-image-file-mode t)
+  (add-to-list 'auto-mode-alist '("\\.cs$" . c++-mode))
   (add-to-list 'auto-mode-alist '("\\.txt$" . org-mode))
   (add-to-list 'auto-mode-alist '("\\README$" . org-mode))
   )

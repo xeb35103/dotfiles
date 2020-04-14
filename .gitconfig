@@ -1,11 +1,23 @@
+[core]
+	editor = nano
+
 [diff]
 	tool = meld
+
 [difftool "meld"]
-	cmd = meld $LOCAL $REMOTE 	
+	cmd = meld $LOCAL $REMOTE
+
 [merge]
 	tool = meld
+
 [mergetool "meld"]
 	cmd = meld $LOCAL $BASE $REMOTE --auto-merge
 
 [user]
 	email = xeb35103@users.noreply.github.com
+	name = xeb35103
+
+[alias]
+  lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
+  lga = log --graph --all --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
+
