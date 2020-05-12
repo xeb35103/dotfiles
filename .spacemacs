@@ -31,20 +31,25 @@ values."
    ;; List of configuration layers to load.
    dotspacemacs-configuration-layers
    '(
+     rust
+     yaml
+     yamlrust
+     windows-scripts
+     octave
      python
-     markdown
+     gtags
      ;; ----------------------------------------------------------------
      ;; Example of useful layers you may want to use right away.
      ;; Uncomment some layer names and press <SPC f e R> (Vim style) or
      ;; <M-m f e R> (Emacs style) to install them.
      ;; ----------------------------------------------------------------
      helm
-     ;; auto-completion
+     auto-completion
      ;; better-defaults
      emacs-lisp
-     ;; git
-     ;; markdown
-     ;; org
+     git
+     markdown
+     org
      ;; (shell :variables
      ;;        shell-default-height 30
      ;;        shell-default-position 'bottom)
@@ -56,7 +61,11 @@ values."
    ;; wrapped in a layer. If you need some configuration for these
    ;; packages, then consider creating a layer. You can also put the
    ;; configuration in `dotspacemacs/user-config'.
-   dotspacemacs-additional-packages '()
+   dotspacemacs-additional-packages '(
+                                      mozc
+                                      ;;mozc-im
+                                      ;;mozc-popup
+                                      )
    ;; A list of packages that cannot be updated.
    dotspacemacs-frozen-packages '()
    ;; A list of packages that will not be installed and loaded.
@@ -248,8 +257,18 @@ values."
    ;; scrolling overrides the default behavior of Emacs which recenters point
    ;; when it reaches the top or bottom of the screen. (default t)
    dotspacemacs-smooth-scrolling t
-   ;; If non nil line numbers are turned on in all `prog-mode' and `text-mode'
-   ;; derivatives. If set to `relative', also turns on relative line numbers.
+   ;; Control line numbers activation.
+   ;; If set to `t' or `relative' line numbers are turned on in all `prog-mode' and
+   ;; `text-mode' derivatives. If set to `relative', line numbers are relative.
+   ;; This variable can also be set to a property list for finer control:
+   ;; '(:relative nil
+   ;;   :disabled-for-modes dired-mode
+   ;;                       doc-view-mode
+   ;;                       markdown-mode
+   ;;                       org-mode
+   ;;                       pdf-view-mode
+   ;;                       text-mode
+   ;;   :size-limit-kb 1000)
    ;; (default nil)
    dotspacemacs-line-numbers nil
    ;; Code folding method. Possible values are `evil' and `origami'.
@@ -301,7 +320,8 @@ layers configuration.
 This is the place where most of your configurations should be done. Unless it is
 explicitly specified that a variable should be set before a package is loaded,
 you should place your code here."
-  (global-set-key "\C-h" 'delete-backward-char)
+;  (global-set-key "\C-h" 'delete-backward-char)
+  (keyboard-translate ?\C-h ?\C-?)
   (auto-image-file-mode t)
   (add-to-list 'auto-mode-alist '("\\.cs$" . c++-mode))
   (add-to-list 'auto-mode-alist '("\\.txt$" . org-mode))
@@ -310,3 +330,17 @@ you should place your code here."
 
 ;; Do not write anything past this comment. This is where Emacs will
 ;; auto-generate custom variable definitions.
+(custom-set-variables
+ ;; custom-set-variables was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(package-selected-packages
+   (quote
+    (helm-gtags ggtags racer org-projectile org-pomodoro alert log4e magit-gitflow hy-mode evil-magit yapfify yaml-mode toml-mode smeargle pos-tip pyvenv pytest pyenv-mode py-isort powershell pip-requirements orgit org-category-capture org-present gntp org-mime org-download mozc mmm-mode markdown-toc magit-popup live-py-mode dash-functional htmlize helm-pydoc helm-gitignore helm-company helm-c-yasnippet gnuplot gitignore-mode gitconfig-mode gitattributes-mode git-timemachine git-messenger git-link gh-md fuzzy magit git-commit with-editor transient cython-mode company-statistics company-anaconda company cargo markdown-mode rust-mode auto-yasnippet yasnippet anaconda-mode pythonic ac-ispell auto-complete spinner evil-visualstar evil-visual-mark-mode evil-tutor evil-surround evil-mc evil-matchit evil-lisp-state evil-indent-plus evil-iedit-state iedit evil-exchange evil-ediff evil-args evil-anzu anzu evil undo-tree adaptive-wrap ws-butler winum which-key volatile-highlights vi-tilde-fringe uuidgen use-package toc-org spaceline powerline smartparens restart-emacs request rainbow-delimiters popwin persp-mode pcre2el paradox org-plus-contrib org-bullets open-junk-file neotree move-text macrostep lorem-ipsum linum-relative link-hint indent-guide hydra lv hungry-delete hl-todo highlight-parentheses highlight-numbers parent-mode highlight-indentation helm-themes helm-swoop helm-projectile projectile pkg-info epl helm-mode-manager helm-make helm-flx helm-descbinds helm-ag google-translate golden-ratio flx-ido flx fill-column-indicator fancy-battery eyebrowse expand-region exec-path-from-shell evil-unimpaired evil-search-highlight-persist highlight evil-numbers evil-nerd-commenter evil-escape goto-chg eval-sexp-fu elisp-slime-nav dumb-jump f dash s diminish define-word column-enforce-mode clean-aindent-mode bind-map bind-key auto-highlight-symbol auto-compile packed aggressive-indent ace-window ace-link ace-jump-helm-line helm avy helm-core popup async))))
+(custom-set-faces
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ )
