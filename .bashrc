@@ -116,25 +116,4 @@ if ! shopt -oq posix; then
   fi
 fi
 
-# ROS
-#source ~/.bashrc.ros.fuerte
-#source ~/.bashrc.ros.groovy
-#source ~/.bashrc.ros.hydro
-#source ~/.bashrc.ros.indigo
-source ~/.bashrc.ros.melodic
 
-# etc
-export PATH=/opt/arduino:$PATH
-export PATH=/opt/processing:$PATH
-export PATH=.:~/bin:~/work/bin:$PATH
-
-# android
-export ANDROID_HOME=/opt/android-studio/sdk
-export PATH=$PATH:/opt/android-studio/sdk/tools
-export PATH=$PATH:/opt/android-studio/sdk/platform-tools
-export PATH=$PATH:/opt/android-studio/bin
-
-PERL_MB_OPT="--install_base \"/home/leus/perl5\""; export PERL_MB_OPT;
-PERL_MM_OPT="INSTALL_BASE=/home/leus/perl5"; export PERL_MM_OPT;
-source /opt/ros/melodic/setup.bash
-source ~/catkin_ws/devel/setup.bash

@@ -1,7 +1,7 @@
 #!/bin/bash
 DOT_FILES=(.bashrc .bash_aliases)
 DOT_FILES=(${DOT_FILES[@]} .bashrc.ros.melodic)
-DOT_FILES=(${DOT_FILES[@]} .emacs .fd2rc .mg)
+DOT_FILES=(${DOT_FILES[@]} .fd2rc .mg)
 DOT_FILES=(${DOT_FILES[@]} .spacemacs)
 DOT_FILES=(${DOT_FILES[@]} .gitconfig .gitignore)
 

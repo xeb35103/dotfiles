@@ -1,5 +1,6 @@
 [core]
 	editor = nano
+	autoCRLF = false
 
 [diff]
 	tool = meld
