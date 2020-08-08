@@ -1,3 +1,5 @@
+#!/bin/bash -x
+
 # ROS
 . ~/dotfiles/.bash_ros
 
@@ -19,10 +21,12 @@ if [ -d /opt/android-studio ]; then
 fi
 
 # PERL
-PERL_MB_OPT="--install_base \"/home/leus/perl5\""; export PERL_MB_OPT;
-PERL_MM_OPT="INSTALL_BASE=/home/leus/perl5"; export PERL_MM_OPT;
+PERL_MB_OPT="--install_base \"/home/${USER}/perl5\""; export PERL_MB_OPT;
+PERL_MM_OPT="INSTALL_BASE=/home/${USER}/perl5"; export PERL_MM_OPT;
 
 # for gazebo on VMWare
 export SVGA_VGPU10=0
 
+# for webots on VMWare
+#export SVGA_VGPU10=
 

@@ -1,6 +1,7 @@
 #!/bin/bash
-DOT_FILES=(.bashrc .bash_aliases)
-DOT_FILES=(${DOT_FILES[@]} .bashrc.ros.melodic)
+#DOT_FILES=(.bashrc)
+DOT_FILES=(${DOT_FILES[@]} .bash_aliases)
+#DOT_FILES=(${DOT_FILES[@]} .bashrc.ros.melodic)
 DOT_FILES=(${DOT_FILES[@]} .fd2rc .mg)
 DOT_FILES=(${DOT_FILES[@]} .spacemacs)
 DOT_FILES=(${DOT_FILES[@]} .gitconfig .gitignore)
@@ -18,3 +19,10 @@ do
         ln -s $HOME/dotfiles/$file $HOME/$file
     fi
 done
+
+if grep -q bash_user $HOME/.bashrc; then
+    echo 'bash_user.$USER is already exist in .bashrc'
+else
+    echo 'source $HOME/dotfiles/.bash_user.$USER' >> $HOME/.bashrc
+fi
+
