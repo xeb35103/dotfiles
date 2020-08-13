@@ -9,7 +9,7 @@ sudo sed -i.bak -e "s%http://.*.ubuntu.com%http://ftp.jaist.ac.jp/pub/Linux%g" /
 
 # apt update
 sudo apt update
-sudo apt upgrade
+sudo apt upgrade -y
 
 # time adjust
 sudo timedatectl set-local-rtc true
@@ -17,13 +17,29 @@ sudo timedatectl set-local-rtc true
 # home directory
 LANG=C xdg-user-dirs-gtk-update
 
+# show date in panel
+gsettings set org.gnome.desktop.interface clock-show-date true
+
+# key binding
+gsettings set org.gnome.desktop.input-sources xkb-options "['ctrl:nocaps']"
+#gsettings set org.gnome.desktop.input-sources xkb-options "['ctrl:swapcaps']"
+
+# emacs key binding
+gsettings set org.gnome.desktop.interface gtk-key-theme Emacs
+
 # network
-sudo apt install ssh
+sudo apt install -y ssh
+
+# adobe flash plugin
+sudo apt install -y adobe-flashplugin
+
+# codecs
+sudo apt install -y ubuntu-restricted-extras
 
 # application
-sudo apt install git etckeeper
-sudo apt install silversearcher-ag mg jed meld
-sudo apt install net-tools
+sudo apt install -y git etckeeper
+sudo apt install -y silversearcher-ag mg jed meld
+sudo apt install -y net-tools
 
 # dotfiles
 cd ~
@@ -36,3 +52,5 @@ else
     ./linkAll.sh
 fi;
 
+# clean apt cache
+sudo apt clean

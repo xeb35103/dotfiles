@@ -16,7 +16,7 @@ rosdep update
 sudo apt install python-catkin-tools
 source /opt/ros/${ROS_DISTRO}/setup.bash
 mkdir -p ~/ros_catkin_ws/${ROS_DISTRO}/src
-cd ~/ros_catkin_ws/${ROS_DISTRO
+cd ~/ros_catkin_ws/${ROS_DISTRO}
 catkin build
 source devel/setup.bash
 #catkin init

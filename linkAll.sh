@@ -5,6 +5,7 @@ DOT_FILES=(${DOT_FILES[@]} .bash_aliases)
 DOT_FILES=(${DOT_FILES[@]} .fd2rc .mg)
 DOT_FILES=(${DOT_FILES[@]} .spacemacs)
 DOT_FILES=(${DOT_FILES[@]} .gitconfig .gitignore)
+DOT_FILES=(${DOT_FILES[@]} .tmux.conf)
 
 for file in ${DOT_FILES[@]}
 do
