@@ -23,5 +23,6 @@ source ~/ros_catkin_ws/${ROS_DIST}/devel/setup.bash
 #export ROS_PACKAGE_PATH=~/ros_build_ws/${ROS_DIST}:$ROS_PACKAGE_PATH
 
 # TURTLEBOT3
-export TURTLEBOT3_MODEL=burger
+#export TURTLEBOT3_MODEL=burger
+export TURTLEBOT3_MODEL=waffle_pi
 
