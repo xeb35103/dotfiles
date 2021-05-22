@@ -1,0 +1,32 @@
+#!/bin/bash -x
+
+# ROS
+. ~/dotfiles/.bash_ros
+
+# etc
+if [ -d /opt/arduino ]; then
+   export PATH=/opt/arduino:$PATH
+fi
+if [ -d /opt/processing ]; then
+   export PATH=/opt/processing:$PATH
+fi
+export PATH=.:~/bin:~/work/bin:$PATH
+
+# android
+if [ -d /opt/android-studio ]; then
+   export ANDROID_HOME=/opt/android-studio/sdk
+   export PATH=$PATH:/opt/android-studio/sdk/tools
+   export PATH=$PATH:/opt/android-studio/sdk/platform-tools
+   export PATH=$PATH:/opt/android-studio/bin
+fi
+
+# PERL
+PERL_MB_OPT="--install_base \"/home/${USER}/perl5\""; export PERL_MB_OPT;
+PERL_MM_OPT="INSTALL_BASE=/home/${USER}/perl5"; export PERL_MM_OPT;
+
+# for gazebo on VMWare
+#export SVGA_VGPU10=0
+
+# for webots on VMWare
+#export SVGA_VGPU10=
+

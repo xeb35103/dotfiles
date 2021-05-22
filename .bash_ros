@@ -1,0 +1,14 @@
+#echo ".bash_ros"
+
+# ROS
+RELEASE=`lsb_release --release | awk '{print $2}'`
+#. ~/dotfiles/.bash_ros.fuerte
+#. ~/dotfiles/.bash_ros.groovy
+#. ~/dotfiles/.bash_ros.hydro
+#. ~/dotfiles/.bash_ros.indigo
+if [ $RELEASE == "18.04" ]; then
+   echo "ROS melodic"
+   . ~/dotfiles/.bash_ros.melodic
+fi
+
+

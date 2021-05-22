@@ -1,0 +1,30 @@
+source /opt/ros/melodic/setup.bash
+
+# ROS
+export ROS_DISTRO=melodic
+
+export ROS_IP=`hostname -I|sed -e 's/ /\n/g'|grep 11`
+echo "ROS_IP=${ROS_IP}"
+if [ -z ${ROS_IP} ]; then
+    export ROS_IP=`hostname -I|sed -e 's/ /\n/g'|grep 10`
+    echo "ROS_IP=${ROS_IP}"
+fi
+if [ -z ${ROS_IP} ]; then
+    export ROS_IP=`hostname -I|sed -e 's/ /\n/g'|grep 192`
+    echo "ROS_IP=${ROS_IP}"
+fi
+if [ -z ${ROS_IP} ]; then
+    export ROS_IP=127.0.0.1
+    echo "ROS_IP=${ROS_IP}"
+fi
+export ROS_HOSTNAME=$ROS_IP
+
+source /opt/ros/${ROS_DISTRO}/setup.bash
+source ~/ros_catkin_ws/${ROS_DISTRO}/devel/setup.bash
+
+#export ROS_PACKAGE_PATH=~/ros_catkin_ws/src:~/ros_build_ws:$ROS_PACKAGE_PATH
+#export ROS_PACKAGE_PATH=~/ros_build_ws/${ROS_DISTRO}:$ROS_PACKAGE_PATH
+
+# TURTLEBOT3
+export TURTLEBOT3_MODEL=burger
+
