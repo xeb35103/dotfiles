@@ -24,6 +24,7 @@ sudo apt install ssh
 sudo apt install git etckeeper
 sudo apt install silversearcher-ag mg jed meld
 sudo apt install net-tools
+sudo apt install tmux
 
 # dotfiles
 cd ~
@@ -32,7 +33,7 @@ if [ -d ${HOME}/dotfiles ]; then
 else
     git clone https://github.com/xeb35103/dotfiles.git
     cd dotfiles/
-    git checkout ubuntu18.04
+    #git checkout ubuntu18.04
     ./linkAll.sh
 fi;
 

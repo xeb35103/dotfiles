@@ -6,7 +6,7 @@
 # applications
 . setup_apps.sh
 
-#
+# ROS
 . setup_ros.sh
 
 

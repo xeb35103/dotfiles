@@ -13,8 +13,9 @@ alias ssh='ssh -X'
 alias ros_remote='source ~/bin/ros_remote.source'
 alias ros_local='source ~/bin/ros_local.source'
 alias qtcreator='/opt/Qt/Tools/QtCreator/bin/qtcreator.sh'
+alias tmux_kill="tmux -kill-server"
 
 # User
-. ~/dotfiles/.bash_user
+. ~/dotfiles/.bash_user.$USER
 
 
